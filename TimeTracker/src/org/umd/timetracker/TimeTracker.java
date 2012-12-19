@@ -2,6 +2,8 @@ package org.umd.timetracker;
 
 import org.joda.time.Period;
 import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -88,7 +90,20 @@ public class TimeTracker
      * @param time The time to convert to a string.
      */
     public static String convertTimeToString(SharedPreferences prefs, DateTime time) {
-	return time.toString();
+	/*
+	Calendar cal1 = Calendar.getInstance();
+	Calendar cal2 = Calendar.getInstance();
+	cal1.setTime(date1);
+	cal2.setTime(date2);
+	boolean sameDay = cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
+	    cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR);
+	if (sameDay) {
+	    // If the same day, simply display the time
+	    return DateTimeFormat.forPattern("h:m a").print(time);
+	} else {
+*/	  
+	return DateTimeFormat.forPattern("h:m a d/M").print(time);
+	//	}
     }
     
     public static String convertTimeToString(Context ctxt, DateTime time) {
