@@ -307,10 +307,11 @@ public class ViewActivity extends Activity
 		DateTime.parse(
 		  activity.getString(activity.getColumnIndex(
 				       ActivityColumns.ACTIVITY_START_TIME)));
+	    // TODO handle the case where ACTIVITY_END_TIME is null
 	    mEndTime = 
 		DateTime.parse(
                   activity.getString(activity.getColumnIndex(
-				       ActivityColumns.ACTIVITY_END_TIME)));
+				       ActivityColumns.ACTIVITY_END_TIME))); 
 	    mTags = 
 		activity.getString(activity.getColumnIndex(ActivityColumns.ACTIVITY_TAGS));
 		  
